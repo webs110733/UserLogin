@@ -10,13 +10,14 @@
     <title></title>
   </head>
   <body>
-      <?php
+      <!-- <?php
         $person1 = new Person("Bob", "BLue", 34);
 
         echo $person1->getPerson();
         echo "<br>";
         var_dump($person1);
-       ?>
+       ?> -->
+       
   </body>
 </html>
 
