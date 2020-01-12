@@ -1,17 +1,1 @@
-<h1 [class.gray]="h1Style">Home</h1>
-<h1 [style.color]="h1Style ? 'blue' : 'purple'"[ngClass]="{
-  'undLine': !h1Style,
-  'undLine': h1Style
-}">Home</h1>
-
-<!-- (click) is an event that is watched for -->
-<button type="button" class="btn btn-primary" (click)="firstClick()">Click me</button>
-<button type="button" class="btn btn-primary" (click)="getUsers()">Get Users</button>
-
-<ul *ngIf="users">
-  <li *ngFor="let user of users.data">
-    <img [src]="user.avatar" alt="">
-    <p>{{ user.first_name }} {{ user.last_name }}</p>
-  </li>
-
-</ul>
+<h1>Test It</h1>
