@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 @Injectable({
@@ -15,5 +15,9 @@ export class DataSvcService {
 
   getUsers() {
     return this.http.get('https://reqres.in/api/users');
+  }
+
+  getUsersPage(pageNum: number){
+    return this.http.get('https://reqres.in/api/users?page=' + pageNum);
   }
 }

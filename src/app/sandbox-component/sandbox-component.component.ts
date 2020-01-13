@@ -19,10 +19,27 @@ export class SandboxComponentComponent implements OnInit {
 
   }
 
+  getUsersPage(eventObject){
+    this.data.getUsersPage(eventObject).subscribe((data) => {
+      this.users = data;
+      console.log(this.users)
+    })
+
+    console.log(eventObject);
+  }
+
+  // getUsersPage(page: string) {
+  //   this.users['page'] = page;
+  //   console.log(this.users);
+  //   this.data.getUsersPage(this.users['page']).subscribe((data) => {
+  //     this.users = data;
+  //     console.log(this.users)
+  //   })
+  // }
 
 getUsers() {
-  this.data.getUsers().subscribe(data => {
-    this.users = data
+  this.data.getUsers().subscribe((data) => {
+    this.users = data;
     console.log(this.users)
   })
 }

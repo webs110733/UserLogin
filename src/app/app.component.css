@@ -1,0 +1,9 @@
+#contentWindow {
+    height: 100%;
+    background-color: lightblue;
+    overflow: visible;
+}
+#main-content-window {
+    background-color: pink;
+    min-height: 100%;
+}

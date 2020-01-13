@@ -1,17 +1,25 @@
-<h1 [class.gray]="h1Style">Sandbox</h1>
-<h1 [style.color]="h1Style ? 'blue' : 'purple'"[ngClass]="{
-  'undLine': !h1Style,
-  'undLine': h1Style
-}">Sandbox</h1>
-
-<!-- (click) is an event that is watched for -->
-<button type="button" class="btn btn-primary" (click)="firstClick()">Click me</button>
-<button type="button" class="btn btn-primary" (click)="getUsers()">Get Users</button>
-
-<ul *ngIf="users">
-  <li *ngFor="let user of users.data">
-    <img [src]="user.avatar" alt="">
-    <p>{{ user.first_name }} {{ user.last_name }}</p>
-  </li>
-
-</ul>
+<div class="h-minus-navbar" style="overflow: auto;">
+  <h1 [class.gray]="h1Style">Sandbox</h1>
+  <h1 [style.color]="h1Style ? 'blue' : 'purple'"[ngClass]="{
+    'undLine': !h1Style,
+    'undLine': h1Style
+  }">Sandbox</h1>
+  
+  <!-- (click) is an event that is watched for -->
+  <button type="button" class="btn btn-primary" (click)="firstClick()">Click me</button>
+  <button type="button" class="btn btn-primary" (click)="getUsers()">Get Users</button>
+  
+  <div style="padding: 20px; overflow: auto;">
+    <ul *ngIf="users">
+      <li *ngFor="let user of users.data" style="padding: 1em">
+        <img [src]="user.avatar" alt="">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+      </li>
+      <!-- The below controls the page turning -->
+      <ngb-pagination [collectionSize]="users.total" [(page)]="users.page" aria-label="Default pagination" (pageChange)="getUsersPage($event)"></ngb-pagination>
+    </ul>
+  </div>
+  <footer class="footer">
+    <div style="background-color: lightgreen;"></div>
+  </footer>
+</div>
